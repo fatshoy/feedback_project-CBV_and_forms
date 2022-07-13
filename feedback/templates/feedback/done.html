@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+Feedback is done!
+{% endblock %}
+
+{% block content%}
+    <h2>Your feedback successfully processed</h2>
+    <h2><a href="{% url 'index' %}">  Back to main </a></h2>
+    <h2><a href="{% url 'list-feedbacks' %}">  Watch all feedbacks </h2>
+{% endblock %}
+

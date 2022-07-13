@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+All feedbacks
+{% endblock %}
+
+{% block content%}
+    <h2>List of all feedbacks</h2>
+    <h2><a href="{% url 'index' %}">  Back to main </a></h2>
+        {% for feed in feedbacks %}
+            <div class="list-feedback">
+                <i>Name</i>: <b>{{ feed.name }} {{ feed.surname }}</b><br>
+                <i>Feedback</i>: {{ feed.feedback }} <br>
+                <i>Rating</i>: <b>{{ feed.rating }}</b>
+                <a href="{% url 'detail-feedback' id_feedback=feed.id %}">Watch details</a>
+            </div>
+        {% endfor %}
+    <h2><a href="{% url 'index' %}">  Back to main </a></h2>
+{% endblock %}

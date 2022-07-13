@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+Page to feedback
+{% endblock %}
+
+{% block content%}
+    <h2>Leave your feedback</h2>
+    <form method="post">
+    {% csrf_token %}
+
+        {% for field in form %}
+            <div class="form-style {% if field.errors %} errors {% endif %}">
+                {{ field.label_tag }}
+                {{ field.errors }}
+                {{ field }}
+            </div>
+        {% endfor %}
+
+    <button type="submit">Send</button>
+    <button type="reset">Reset</button>
+
+    <h2><a href="{% url 'list-feedbacks' %}">  List of all feedbacks </a></h2>
+{% endblock %}

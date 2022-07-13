@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+Feedback details
+{% endblock %}
+
+{% block content%}
+    <h2>Detail info about feedback with id = {{ feed.id }}</h2>
+        <div class="detail-feedback">
+             <i>Name:</i> {{ feed.name }} <br>
+             <i>Surname:</i> {{ feed.surname }} <br>
+             <i>Feedback</i>: {{ feed.feedback }} <br>
+             <i>Rating</i>: {{ feed.rating }}
+        </div>
+    <h2><a href="{% url 'feedback-update' id_feedback=feed.id %}">Edit this feedback</a></h2>
+    <h2><a href="{% url 'index' %}">  Back to main </a></h2>
+    <h2><a href="{% url 'list-feedbacks' %}">  Watch all feedbacks </h2>
+{% endblock %}
